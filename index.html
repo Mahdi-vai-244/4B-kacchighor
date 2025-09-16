@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4B Kacch - হোমনা চৌরাস্তা</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
+            background-color: #FFF5E6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #FF6B35 0%, #e6e19d 50%, #FF6B35 100%);
+            padding: 7px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .logo-text {
+            margin-left: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* New Styles for the small banner */
+        .header-banner {
+            max-width: 250px;
+            /* Smaller size for the banner */
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            box-shadow: none;
+            /* Removed the shadow */
+            margin: 0 10px;
+            /* Add some margin around the banner */
+            flex: 0 0 auto;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FFE;
+            text-decoration: underline;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .menu-icon span {
+            width: 20px;
+            height: 2px;
+            background: white;
+            margin: 2px 0;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&h=900&q=80') no-repeat center center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .offer-message {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            background: rgba(255, 107, 53, 0.8);
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+        }
+
+        .date-display {
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 40px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #FF6B35;
+            font-size: 1.8rem;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: #FFF9F0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .menu-content {
+            padding: 15px;
+        }
+
+        .menu-content h3 {
+            color: #FF6B35;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .menu-content p {
+            color: #666;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #2ECC71;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            background: #2ECC71;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .order-btn:hover {
+            background: #25A25A;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 40px 0;
+            background: #FFF5E6;
+        }
+
+        .video-banner {
+            width: 100%;
+            height: 300px;
+            background: #333;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 107, 53, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+            background: rgba(255, 107, 53, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-play-btn i {
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        /* Links Section */
+        .links {
+            padding: 40px 0;
+            background: white;
+        }
+
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .link-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .link-card.location {
+            border-top: 4px solid #2ECC71;
+        }
+
+        .link-card.facebook {
+            border-top: 4px solid #3b5998;
+            background: linear-gradient(135deg, #3b5998 0%, #3b5998 100%);
+            color: white;
+        }
+
+        .link-card.contact {
+            border-top: 4px solid #FF6B35;
+        }
+
+        .link-card h3 {
+            margin-bottom: 12px;
+            color: #FF6B35;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .link-card.facebook h3 {
+            color: white;
+        }
+
+        .link-card h3 i {
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+
+        .link-card p {
+            margin-bottom: 12px;
+            flex-grow: 1;
+            font-size: 0.9rem;
+        }
+
+        .link-card a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            background: #2ECC71;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .link-card.location a {
+            background: #2ECC71;
+        }
+
+        .link-card.facebook a {
+            background: white;
+            color: #3b5998;
+        }
+
+        .link-card.contact a {
+            background: #FF6B35;
+            color: white;
+        }
+
+        .link-card a i {
+            margin-right: 6px;
+        }
+
+        .link-card a:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .facebook-card-content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .facebook-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .facebook-logo img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .facebook-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .footer-about h3 {
+            color: #FF6B35;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .feature-list i {
+            color: #FF6B35;
+            font-size: 1.3rem;
+            margin-right: 8px;
+            min-width: 25px;
+        }
+
+        .owner-info {
+            background: #444;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .owner-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 12px;
+            border: 2px solid #FF6B35;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            border-top: 1px solid #555;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .floating-order {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: #2ECC71;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 99;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .floating-order:hover {
+            background: #25A25A;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .links-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 10px;
+                justify-content: space-between;
+            }
+
+            .header-banner {
+                order: 0;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .hero {
+                height: 35vh;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
+            .links-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-banner {
+                max-width: 200px;
+            }
+
+            .hero {
+                height: 30vh;
+            }
+
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+
+            .video-banner {
+                height: 200px;
+            }
+
+            .video-play-btn {
+                width: 60px;
+                height: 60px;
+            }
+
+            .menu-item img {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://i.postimg.cc/QCbN0w5r/logo-512x512.png" alt="4B Kacchi Logo">
+            </div>
+
+            <!-- New banner image in the header -->
+            <img src="https://i.postimg.cc/Qd8Ljy84/kacchi-500x144.png" alt="4B Kacchi Banner" class="header-banner">
+
+            <div class="nav-right">
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>আজকের অফার</h1>
+            <div class="offer-message">দুঃখিত আজকে কোন অফার নেই</div>
+            <div class="date-display" id="current-date">Today's Date</div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">↓Kacchi Packages↓</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Single Package">
+                    <div class="menu-content">
+                        <h3>Single</h3>
+                        <p>একজনের জন্য যথেষ্ট</p>
+                        <span class="price">269 TK</span>
+                        <a href="https://wa.me/8801732052036" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Dual Friend Package">
+                    <div class="menu-content">
+                        <h3>Dual Friend</h3>
+                        <p>দুজনের জন্য best</p>
+                        <span class="price">519 TK</span>
+                        <a href="https://wa.me/8801732052036" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://previews.123rf.com/images/stockbroker/stockbroker2201/stockbroker220100201/180721849-multi-cultural-group-of-male-friends-enjoying-night-out-eating-meal-and-drinking-in-restaurant.jpg"
+                        alt="Squad Package">
+                    <div class="menu-content">
+                        <h3>Squad</h3>
+                        <p>ছোট গ্রুপের জন্য যথেষ্ট</p>
+                        <span class="price">1050 TK</span>
+                        <a href="https://wa.me/8801732052036" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://img.delicious.com.au/qSs1puls/w759-h506-cfill/del/2020/02/gathered-around-a-dining-table-126554-1.jpg"
+                        alt="Family Plan">
+                    <div class="menu-content">
+                        <h3>Family Plan</h3>
+                        <p>সম্পূর্ণ ফ্যামিলির জন্য যথেষ্ট</p>
+                        <span class="price">Custom</span>
+                        <a href="https://wa.me/8801732052036" class="order-btn">☎️ contact ☎️</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://padmanews24.com/wp-content/uploads/2019/06/murk.jpg" alt="Morog Polao">
+                    <div class="menu-content">
+                        <h3>মোরগ পোলাও</h3>
+                        <p>Roast Polao + Egg</p>
+                        <span class="price">179 TK</span>
+                        <a href="https://wa.me/8801732052036" class="order-btn">sms 📩 now</a>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JMz3T-Ao8J12ueqgXbbpRaeEtYmV-4ibkW-qyz_IEEHFxTBjzZ_hObu-yQqoJ_JwnPI&usqp=CAU"
+                        alt="Special Event Package">
+                    <div class="menu-content">
+                        <h3>অনুষ্ঠানিক আয়োজন</h3>
+                        <p>Special events only</p>
+                        <span class="price">Contact Only</span>
+                        <a href="https://wa.me/8801732052036" class="order-btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="video-banner" onclick="playVideo()">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcRnPOuo1RO4q-2rxd3xd5Csi9Tcq-lTXQksHBLD-DVDvEyICHmnvXzycXrQZXVZ32TaU&usqp=CAU"
+                    alt="Video Thumbnail">
+                <div class="video-play-btn">
+                    <i class='bx bx-play'></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links" id="contact">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="links-container">
+                <div class="link-card location">
+                    <h3><i class='bx bx-current-location'></i> Shop Location</h3>
+                    <p>হোমনা চৌরাস্তা</p>
+                    <a href="https://maps.app.goo.gl/Pfygnqbak7bukZyQ6" target="_blank">
+                        <i class='bx bx-map'></i> Click for Google Map
+                    </a>
+                </div>
+
+                <div class="link-card facebook">
+                    <div class="facebook-card-content">
+                        <div class="facebook-logo">
+                            <i class='bx bxl-facebook-square' style="color: #3b5998; font-size: 1.8rem;"></i>
+                        </div>
+                        <div class="facebook-text">
+                            <h4>4B কাচ্চি ঘর</h4>
+                            <p>Facebook Page</p>
+                        </div>
+                    </div>
+                    <p>Follow us for updates and special offers</p>
+                    <a href="https://www.facebook.com/profile.php?id=61576213793197" target="_blank">
+                        <i class='bx bxl-facebook'></i> Visit Facebook
+                    </a>
+                </div>
+
+                <div class="link-card contact">
+                    <h3><i class='bx bx-phone'></i> Contact Us</h3>
+                    <p>আয়োজন বা অর্ডারের জন্য কল করুন</p>
+                    <a href="tel:+8801732052036">
+                        <i class='bx bx-phone-call'></i> +8801732-052036
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>"4B কাচ্চি ঘর" কেন সবার থেকে সেরা?</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <i class='bx bx-bowl-rice'></i>
+                            <span>ভিয়েতনামে দীর্ঘ তিন-চার বছরের অভিজ্ঞতাসম্পন্ন দক্ষ বাবুর্চি আপনাদের জন্য রান্না করেন
+                                সেই স্পেশাল কাচ্চি।</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-building-house'></i>
+                            <span>ভিতরে রয়েছে মনোরম পরিবেশ, শীতাতপ নিয়ন্ত্রিত আরামদায়ক আবহ ও বিলাসবহুল
+                                সাজসজ্জা।</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-location-plus'></i>
+                            <span>এছাড়াও আমাদের লোকেশন সুবিধাজনক—যে কোনো জায়গা থেকেই সহজে পৌঁছানো যায়।</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="owner-info">
+                    <img src="https://i.postimg.cc/KvBBGR18/Whats-App-Image-2025-09-16-at-00-23-55-e71cead8.jpg"
+                        alt="Mahdi Hasan" class="owner-img">
+                    <h3>শান্ত আহমেদ</h3>
+                    <p>প্রোভাইডার, 4B কাচ্চি ঘর</p>
+                    <p>ঘারমোড়া, হোমনা, কুমিল্লা</p>
+                    <p>+8801732-052036</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2025 4B Kacchighor | All Rights Reserved</p>
+            </div>
+        </div>
+
+        <a href="https://wa.me/8801732052036" class="floating-order">Order Now</a>
+    </footer>
+
+    <script>
+        // Display current date
+        function updateDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('bn-BD', options);
+        }
+
+        // Video play function
+        function playVideo() {
+            alert("দুঃখিত, এখানে এখনো কোনো ভিডিও যুক্ত করা হয়নি, আপাতত শুধু থাম্বনেইল দেওয়া আছে।");
+            // Replace with actual video code:
+            // window.open('https://youtube.com/your-video-link', '_blank');
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+            const nav = document.querySelector('nav ul');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '60px';
+                nav.style.right = '10px';
+                nav.style.background = '#FF6B35';
+                nav.style.padding = '12px';
+                nav.style.borderRadius = '6px';
+                nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                nav.style.gap = '8px';
+            }
+        });
+
+        // Initialize on page load
+        window.onload = function () {
+            updateDate();
+        };
+    </script>
+</body>
+
+</html>
